@@ -28,7 +28,7 @@ public class ListaProduto extends HttpServlet {
 			LojaDao lojaDao = new LojaDao();
 			request.setAttribute("produto", produtoDao.getLista());
 			request.setAttribute("loja", lojaDao.getLista());
-			RequestDispatcher rd = request.getRequestDispatcher("listaProduto.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

@@ -87,7 +87,7 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="https://github.com/guilhermeeng99/VendasAcai"
+						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.
 						Requisitos, Banco de Dados I
