@@ -1,7 +1,6 @@
 package br.ucsal.loja.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -22,14 +21,10 @@ public class ListarLojaServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		try {
-			LojaDao HorarioDao = new LojaDao();
-			request.setAttribute("loja", HorarioDao.getLista());
-			RequestDispatcher rd = request.getRequestDispatcher("listarLoja.jsp");
-			rd.forward(request, response);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
+		LojaDao lojaDao = new LojaDao();
+		request.setAttribute("loja", lojaDao.getLista());
+		RequestDispatcher rd = request.getRequestDispatcher("listarLoja.jsp");
+		rd.forward(request, response);
 	}
 
 }

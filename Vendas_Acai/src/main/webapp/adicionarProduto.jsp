@@ -47,7 +47,7 @@
 					<div class="table-responsive">
 						<form action="AdicionarProdutoServlet" method="POST">
 							<div class="form-group">
-								<label>Nome do Produto (Não poderá ser alterado)</label> <input
+								<label>Nome do Produto</label> <input
 									class="form-control" type="text" name="nome" />
 							</div>
 							<div class="form-group">
@@ -87,7 +87,6 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.

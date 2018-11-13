@@ -38,7 +38,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="logarLoja.jsp">Logar Loja</a></li>
+					<li><a href="ListarLojaServlet">Visualizar Lojas</a></li>
 					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
 				</ul>
 			</div>
@@ -49,34 +49,32 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
-					<h2>Tabela de Produtos</h2>
 					<div class="table-responsive">
-						<table class="table table-bordered">
-
-							<tr>
-								<th>Id</th>
-								<th>Nome</th>
-								<th>Conteúdo</th>
-								<th>Gramas</th>
-								<th>Preço</th>
-							</tr>
-							<c:forEach var="l" items="${loja}">
-								<tr>
-									<td>Loja: ${l.nome}</td>
-
-								</tr>
-								<c:forEach var="p" items="${produto}">
-									<tr>
-										<td>${p.id}</td>
-										<td>${p.nome}</td>
-										<td>${p.conteudo}</td>
-										<td>${p.gramas}</td>
-										<td>${p.preco}</td>
-
-									</tr>
-								</c:forEach>
-							</c:forEach>
-						</table>
+					<a href="adicionarProduto.jsp">Adicionar Produto</a>
+						<form action="AlterarLojaServlet" method="POST">
+							<input type="hidden" name="id" value="${loja.id}">
+							<div class="form-group">
+								<label>Nome da Loja</label> <input class="form-control"
+									type="text" name="nome" value="${loja.nome}" />
+							</div>
+							<div class="form-group">
+								<label>E-mail</label> <input class="form-control" type="text"
+									name="email" value="${loja.email}" />
+							</div>
+							<div class="form-group">
+								<label>Login</label> <input class="form-control" type="text"
+									name="login" value="${loja.login}" />
+							</div>
+							<div class="form-group">
+								<label>Senha</label> <input class="form-control" type="text"
+									name="senha" value="${loja.senha}" />
+							</div>
+							<div class="form-group">
+								<label>Bairro</label> <input class="form-control" type="text"
+									name="bairro" value="${loja.bairro}" />
+							</div>
+							<button type="submit" class="btn btn-primary mb-2">Inserir</button>
+						</form>
 					</div>
 
 				</div>
@@ -99,7 +97,6 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.

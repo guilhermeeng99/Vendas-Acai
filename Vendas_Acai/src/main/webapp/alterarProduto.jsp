@@ -34,30 +34,49 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarLojaServlet">Vendas Açaí</a>
+				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
 			</div>
-
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="ListarLojaServlet">Visualizar Lojas</a></li>
+					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
 	<div id="ww">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4 centered">
+				<div class="col-lg-8 col-lg-offset-2 centered">
 					<div class="table-responsive">
-						<form action="AlterarLojaSenhaServlet" method="POST">
+						<form action="AlterarProdutoServlet" method="POST">
+							<input type="hidden" name="id" value="${produto.id}">
 							<div class="form-group">
-								<label>Senha</label> <input class="form-control" type="text"
-									name="senha" />
+								<label>Nome do Produto</label> <input class="form-control"
+									type="text" name="nome" value="${produto.nome}" />
 							</div>
+							<div class="form-group">
+								<label>Conteúdo</label> <input class="form-control" type="text"
+									name="conteudo" value="${produto.conteudo}" />
+							</div>
+							<div class="form-group">
+								<label>Gramas</label> <input class="form-control" type="text"
+									name="gramas" value="${produto.gramas}" />
+							</div>
+							<div class="form-group">
+								<label>Preço</label> <input class="form-control" type="text"
+									name="preco" value="${produto.preco}" />
+							</div>
+							
 							<button type="submit" class="btn btn-primary mb-2">Inserir</button>
 						</form>
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<div id="footer">
 		<div class="container">
@@ -74,7 +93,6 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.

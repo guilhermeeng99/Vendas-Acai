@@ -38,7 +38,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="logarLoja.jsp">Logar Loja</a></li>
+					<li><a href="ListarLojaServlet">Visualizar Lojas</a></li>
 					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
 				</ul>
 			</div>
@@ -68,6 +68,8 @@
 									<td>${l.login}</td>
 									<td>${l.senha}</td>
 									<td>${l.bairro}</td>
+									<td><a href="AlterarLojaServlet?id=${l.id}">ALTERAR</a></td>
+									<td><a href="RemoverLojaServlet?id=${l.id}">REMOVER</a></td>
 								</tr>
 							</c:forEach>
 
@@ -94,7 +96,6 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.

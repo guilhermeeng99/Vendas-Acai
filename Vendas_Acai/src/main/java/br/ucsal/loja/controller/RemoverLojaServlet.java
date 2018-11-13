@@ -1,8 +1,8 @@
 package br.ucsal.loja.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.ucsal.loja.dao.LojaDao;
-import br.ucsal.loja.model.Loja;
 
 @WebServlet("/RemoverLojaServlet")
 public class RemoverLojaServlet extends HttpServlet {
@@ -21,26 +20,15 @@ public class RemoverLojaServlet extends HttpServlet {
 
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		Loja loja = new Loja();
+		String id = req.getParameter("id");
 
-		String senha = request.getParameter("senha");
+		LojaDao lojaDao = new LojaDao();
 
-		loja.setSenha(senha);
+		lojaDao.remove(Long.parseLong(id));
 
-		LojaDao lojaDao;
-		
-		try {
-			lojaDao = new LojaDao();
-			lojaDao.remove(loja);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-
-		response.sendRedirect("/ListarProdutoServlet");
-
+		RequestDispatcher rd = req.getRequestDispatcher("/ListarLojaServlet");
+		rd.forward(req, resp);
 	}
-
 }

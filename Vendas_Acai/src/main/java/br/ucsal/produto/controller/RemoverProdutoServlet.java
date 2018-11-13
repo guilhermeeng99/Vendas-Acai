@@ -11,20 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.ucsal.produto.dao.ProdutoDao;
 
-@WebServlet("/ListarProdutoServlet")
-public class ListarProdutoServlet extends HttpServlet {
+@WebServlet("/RemoverProdutoServlet")
+public class RemoverProdutoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ListarProdutoServlet() {
+	public RemoverProdutoServlet() {
 		super();
+
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String id = req.getParameter("id");
+
 		ProdutoDao produtoDao = new ProdutoDao();
-		request.setAttribute("produto", produtoDao.getLista());
-		RequestDispatcher rd = request.getRequestDispatcher("listarProduto.jsp");
-		rd.forward(request, response);
-	}
 
+		produtoDao.remove(Long.parseLong(id));
+
+		RequestDispatcher rd = req.getRequestDispatcher("/ListarProdutoServlet");
+		rd.forward(req, resp);
+	}
 }

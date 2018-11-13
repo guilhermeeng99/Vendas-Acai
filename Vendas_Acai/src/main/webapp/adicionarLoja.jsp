@@ -55,8 +55,8 @@
 									name="email" />
 							</div>
 							<div class="form-group">
-								<label>Login (Não poderá ser alterado)</label> <input
-									class="form-control" type="text" name="login" />
+								<label>Login</label> <input class="form-control" type="text"
+									name="login" />
 							</div>
 							<div class="form-group">
 								<label>Senha</label> <input class="form-control" type="password"
@@ -91,7 +91,6 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.
