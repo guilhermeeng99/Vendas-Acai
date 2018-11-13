@@ -1,4 +1,4 @@
-package br.ucsal.cliente.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.cliente.dao.LojaDao;
-import br.ucsal.cliente.model.Loja;
+import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.loja.model.Loja;
 
-@WebServlet("/AlterarEmail")
-public class AlterarEmail extends HttpServlet {
+@WebServlet("/AlterarLojaEmailServlet")
+public class AlterarLojaEmailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AlterarEmail() {
+	public AlterarLojaEmailServlet() {
 		super();
 
 	}
@@ -39,7 +39,7 @@ public class AlterarEmail extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("/ListaLoja");
+		response.sendRedirect("/ListarLojaServlet");
 
 	}
 

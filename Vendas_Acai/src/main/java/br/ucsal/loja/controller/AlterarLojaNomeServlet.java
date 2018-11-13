@@ -1,4 +1,4 @@
-package br.ucsal.cliente.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.cliente.dao.LojaDao;
-import br.ucsal.cliente.model.Loja;
+import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.loja.model.Loja;
 
-@WebServlet("/InserirLoja")
-public class InserirLoja extends HttpServlet {
+@WebServlet("/AlterarLojaNomeServlet")
+public class AlterarLojaNomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public InserirLoja() {
+	public AlterarLojaNomeServlet() {
 		super();
 
 	}
@@ -24,30 +24,22 @@ public class InserirLoja extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Loja loja = new Loja();
-
+		Loja user = (Loja) request.getSession().getAttribute("user");
 		String nome = request.getParameter("nome");
-		String email = request.getParameter("email");
-		String login = request.getParameter("login");
-		String senha = request.getParameter("senha");
-		String bairro = request.getParameter("bairro");
-
-		loja.setNome(nome);
-		loja.setEmail(email);
-		loja.setLogin(login);
-		loja.setSenha(senha);
-		loja.setBairro(bairro);
+		user.setNome(nome);
 
 		LojaDao lojaDao;
-		
+
 		try {
 			lojaDao = new LojaDao();
-			lojaDao.adiciona(loja);
+			if (user.getSenha().equals(null)) {
+			}
+			lojaDao.alteraNome(user);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("/cadastrarLojaProduto.jsp");
+		response.sendRedirect("/ListarLojaServlet");
 
 	}
 

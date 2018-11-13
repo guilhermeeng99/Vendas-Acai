@@ -33,7 +33,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListaProduto">Vendas Açaí</a>
+				<a class="navbar-brand" href="ListarLojaServlet">Vendas Açaí</a>
 			</div>
 		</div>
 	</div>
@@ -42,7 +42,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-5 col-lg-offset-3 centered">
-					<a class="navbar-brand" href="cadastrarLojaProduto.jsp">Adicionar
+					<a class="navbar-brand" href="adicionarProduto.jsp">Adicionar
 						Produto</a> <a class="navbar-brand" href="alterarNome.jsp">Alterar
 						Nome</a> <a class="navbar-brand" href="alterarEmail.jsp">Alterar
 						Email</a> <a class="navbar-brand" href="alterarBairro.jsp">Alterar
@@ -69,7 +69,7 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
-						<a href="ListaLoja" target="_blank">Informações das Lojas</a><br>
+						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.

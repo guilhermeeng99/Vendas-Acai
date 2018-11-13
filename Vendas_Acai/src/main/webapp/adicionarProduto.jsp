@@ -34,7 +34,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListaProduto">Vendas Açaí</a>
+				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
 			</div>
 
 		</div>
@@ -45,10 +45,10 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
-						<form action="InserirLojaProduto" method="POST">
+						<form action="AdicionarProdutoServlet" method="POST">
 							<div class="form-group">
-								<label>Nome do Produto (Não poderá ser alterado)</label> <input class="form-control"
-									type="text" name="nome" />
+								<label>Nome do Produto (Não poderá ser alterado)</label> <input
+									class="form-control" type="text" name="nome" />
 							</div>
 							<div class="form-group">
 								<label>Conteúdo</label> <input class="form-control" type="text"
@@ -87,6 +87,7 @@
 				</div>
 				<div class="col-lg-6 ">
 					<p>
+						<a href="ListarLojaServlet" target="_blank">Informações das Lojas</a><br>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a><br> Atividade realizada
 						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.

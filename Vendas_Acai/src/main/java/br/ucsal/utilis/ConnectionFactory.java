@@ -1,4 +1,4 @@
-package br.ucsal.cliente.dao;
+package br.ucsal.utilis;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

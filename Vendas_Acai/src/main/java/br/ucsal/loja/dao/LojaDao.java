@@ -1,4 +1,4 @@
-package br.ucsal.cliente.dao;
+package br.ucsal.loja.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,7 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ucsal.cliente.model.Loja;
+import br.ucsal.loja.model.Loja;
+import br.ucsal.utilis.ConnectionFactory;
 
 public class LojaDao {
 

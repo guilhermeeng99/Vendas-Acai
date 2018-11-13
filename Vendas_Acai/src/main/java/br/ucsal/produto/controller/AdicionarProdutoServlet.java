@@ -1,4 +1,4 @@
-package br.ucsal.cliente.controller;
+package br.ucsal.produto.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.cliente.dao.ProdutoDao;
-import br.ucsal.cliente.model.Produto;
+import br.ucsal.produto.dao.ProdutoDao;
+import br.ucsal.produto.model.Produto;
 
-@WebServlet("/InserirLojaProduto")
-public class InserirLojaProduto extends HttpServlet {
+@WebServlet("/AdicionarProdutoServlet")
+public class AdicionarProdutoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public InserirLojaProduto() {
+	public AdicionarProdutoServlet() {
 		super();
 
 	}
@@ -45,7 +45,7 @@ public class InserirLojaProduto extends HttpServlet {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("/ListaProduto");
+		response.sendRedirect("/ListarProdutoServlet");
 
 	}
 

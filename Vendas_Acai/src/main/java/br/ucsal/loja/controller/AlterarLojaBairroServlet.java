@@ -1,4 +1,4 @@
-package br.ucsal.cliente.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.cliente.dao.LojaDao;
-import br.ucsal.cliente.model.Loja;
+import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.loja.model.Loja;
 
-@WebServlet("/AlterarNome")
-public class AlterarNome extends HttpServlet {
+@WebServlet("/AlterarLojaBairroServlet")
+public class AlterarLojaBairroServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AlterarNome() {
+	public AlterarLojaBairroServlet() {
 		super();
 
 	}
@@ -25,8 +25,8 @@ public class AlterarNome extends HttpServlet {
 			throws ServletException, IOException {
 
 		Loja user = (Loja) request.getSession().getAttribute("user");
-		String nome = request.getParameter("nome");
-		user.setNome(nome);
+		String bairro = request.getParameter("bairro");
+		user.setBairro(bairro);
 
 		LojaDao lojaDao;
 
@@ -34,12 +34,12 @@ public class AlterarNome extends HttpServlet {
 			lojaDao = new LojaDao();
 			if (user.getSenha().equals(null)) {
 			}
-			lojaDao.alteraNome(user);
+			lojaDao.alteraBairro(user);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("/ListaLoja");
+		response.sendRedirect("/ListarLojaServlet");
 
 	}
 

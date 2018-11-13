@@ -1,4 +1,4 @@
-package br.ucsal.cliente.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.cliente.dao.LojaDao;
-import br.ucsal.cliente.model.Loja;
+import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.loja.model.Loja;
 
-@WebServlet("/AlterarBairro")
-public class AlterarBairro extends HttpServlet {
+@WebServlet("/RemoverLojaServlet")
+public class RemoverLojaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AlterarBairro() {
+	public RemoverLojaServlet() {
 		super();
 
 	}
@@ -24,22 +24,22 @@ public class AlterarBairro extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Loja user = (Loja) request.getSession().getAttribute("user");
-		String bairro = request.getParameter("bairro");
-		user.setBairro(bairro);
+		Loja loja = new Loja();
+
+		String senha = request.getParameter("senha");
+
+		loja.setSenha(senha);
 
 		LojaDao lojaDao;
-
+		
 		try {
 			lojaDao = new LojaDao();
-			if (user.getSenha().equals(null)) {
-			}
-			lojaDao.alteraBairro(user);
+			lojaDao.remove(loja);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 
-		response.sendRedirect("/ListaLoja");
+		response.sendRedirect("/ListarProdutoServlet");
 
 	}
 

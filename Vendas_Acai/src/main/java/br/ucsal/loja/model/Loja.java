@@ -1,4 +1,4 @@
-package br.ucsal.cliente.model;
+package br.ucsal.loja.model;
 
 public class Loja {
 
