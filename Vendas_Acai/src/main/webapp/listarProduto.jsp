@@ -40,6 +40,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="ListarLojaServlet">Visualizar Lojas</a></li>
 					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+					<li><a href="ListarProdutoServlet">Visualizar Produtos</a></li>
 				</ul>
 			</div>
 		</div>
@@ -50,33 +51,36 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
 					<h2>Tabela de Produtos</h2>
-					<div class="table-responsive">
-						<table class="table table-bordered">
-
+					<br>
+					<table>
+						<thead>
 							<tr>
 								<th>Id</th>
 								<th>Nome</th>
 								<th>Conteúdo</th>
 								<th>Gramas</th>
 								<th>Preço</th>
+								<th>Alterar</th>
+								<th>Remover</th>
 							</tr>
-							
-								<c:forEach var="p" items="${produto}">
-									<tr>
-										<td>${p.id}</td>
-										<td>${p.nome}</td>
-										<td>${p.conteudo}</td>
-										<td>${p.gramas}</td>
-										<td>${p.preco}</td>
-										<td><a href="AlterarProdutoServlet?id=${p.id}">ALTERAR</a></td>
-										<td><a href="RemoverProdutoServlet?id=${p.id}">REMOVER</a></td>
+						<thead>
+						<tbody>
+							<c:forEach var="p" items="${produto}">
+								<tr>
+									<td>${p.id}</td>
+									<td>${p.nome}</td>
+									<td>${p.conteudo}</td>
+									<td>${p.gramas}</td>
+									<td>${p.preco}</td>
+									<td><a href="AlterarProdutoServlet?id=${p.id}">ALTERAR</a></td>
+									<td><a href="RemoverProdutoServlet?id=${p.id}">REMOVER</a></td>
 
-									</tr>
-								</c:forEach>
-						</table>
-					</div>
-
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
+
 			</div>
 		</div>
 	</div>
@@ -95,12 +99,12 @@
 
 				</div>
 				<div class="col-lg-6 ">
-					<p>
+					<h4>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
-							target="_blank">Repositório</a><br> Atividade realizada
-						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.
-						Requisitos, Banco de Dados I
-					</p>
+							target="_blank">Repositório</a>
+					</h4>
+					<p>Atividade realizada atráves de conhecimentos adquiridos
+						pelas matérias: WEB, Eng. Requisitos, Banco de Dados I</p>
 
 				</div>
 

@@ -45,6 +45,8 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
+						<h2>Cadastrar Loja</h2>
+						<br>
 						<form action="AdicionarLojaServlet" method="POST">
 							<div class="form-group">
 								<label>Nome da Loja</label> <input class="form-control"
@@ -66,7 +68,7 @@
 								<label>Bairro</label> <input class="form-control" type="text"
 									name="bairro" />
 							</div>
-							<button type="submit" class="btn btn-primary mb-2">Inserir</button>
+							<button type="submit" class="btn btn-dark">Inserir</button>
 						</form>
 					</div>
 
@@ -90,12 +92,12 @@
 
 				</div>
 				<div class="col-lg-6 ">
-					<p>
+					<h4>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
-							target="_blank">Repositório</a><br> Atividade realizada
-						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.
-						Requisitos, Banco de Dados I
-					</p>
+							target="_blank">Repositório</a>
+					</h4>
+					<p>Atividade realizada atráves de conhecimentos adquiridos
+						pelas matérias: WEB, Eng. Requisitos, Banco de Dados I</p>
 
 				</div>
 

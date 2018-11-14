@@ -50,7 +50,8 @@
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
 					<div class="table-responsive">
-					<a href="adicionarProduto.jsp">Adicionar Produto</a>
+						<h2>Alterar Loja</h2>
+						<br> <a href="adicionarProduto.jsp">Adicionar Produto</a>
 						<form action="AlterarLojaServlet" method="POST">
 							<input type="hidden" name="id" value="${loja.id}">
 							<div class="form-group">
@@ -96,12 +97,12 @@
 
 				</div>
 				<div class="col-lg-6 ">
-					<p>
+					<h4>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
-							target="_blank">Repositório</a><br> Atividade realizada
-						atráves de conhecimentos adquiridos pelas matérias: WEB, Eng.
-						Requisitos, Banco de Dados I
-					</p>
+							target="_blank">Repositório</a>
+					</h4>
+					<p>Atividade realizada atráves de conhecimentos adquiridos
+						pelas matérias: WEB, Eng. Requisitos, Banco de Dados I</p>
 
 				</div>
 
