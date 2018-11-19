@@ -17,8 +17,8 @@
 <link href="assetss/css/main.css" rel="stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="assets/js/hover.zoom.js"></script>
-<script src="assets/js/hover.zoom.conf.js"></script>
+<script src="assetss/js/hover.zoom.js"></script>
+<script src="assetss/js/hover.zoom.conf.js"></script>
 
 </head>
 
@@ -36,53 +36,37 @@
 				</button>
 				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
 			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Logar Loja</a></li>
-					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
-				</ul>
-			</div>
+
 		</div>
 	</div>
 
 	<div id="ww">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
-					<h2>Tabela de Produtos</h2>
-					<br>
-					<table>
-						<thead>
-							<tr>
-								<th>Id</th>
-								<th>Nome</th>
-								<th>Conteúdo</th>
-								<th>Gramas</th>
-								<th>Preço</th>
-								<th>Alterar</th>
-								<th>Remover</th>
-							</tr>
-						<thead>
-						<tbody>
-							<c:forEach var="p" items="${produto}">
-								<tr>
-									<td>${p.id}</td>
-									<td>${p.nome}</td>
-									<td>${p.conteudo}</td>
-									<td>${p.gramas}</td>
-									<td>${p.preco}</td>
-									<td><a href="AlterarProdutoServlet?id=${p.id}">ALTERAR</a></td>
-									<td><a href="RemoverProdutoServlet?id=${p.id}">REMOVER</a></td>
+				<div class="col-lg-4 col-lg-offset-4 centered">
+					<div class="table-responsive">
+						<h2>Logar Loja</h2>
+						<br>
+						<form action="/LoginServlet" method="POST">
+							
+							<div class="form-group">
+								<label>Login</label> <input class="form-control" type="text"
+									name="login" />
+							</div>
+							<div class="form-group">
+								<label>Senha</label> <input class="form-control" type="password"
+									name="senha" />
+							</div>
+							
+							<button type="submit" class="btn btn-dark">Inserir</button>
+						</form>
+					</div>
 
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
 				</div>
-
 			</div>
 		</div>
 	</div>
+
 
 	<div id="footer">
 		<div class="container">
@@ -90,6 +74,7 @@
 
 				<div class="col-lg-5">
 					<h4>SOBRE O PROJETO:</h4>
+					<a href="ListarLojaServlet">Consulta</a>
 					<p>Um site de vendas de açaí interativo com os usuários, de
 						forma que os mesmos não precisem mais ir até o local de vendas ou
 						pegar filas para comprar o açaí, já que os usuários receberão em

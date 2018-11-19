@@ -38,9 +38,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="ListarLojaServlet">Visualizar Lojas</a></li>
+					<li><a href="login.jsp">Logar Loja</a></li>
 					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
-					<li><a href="ListarProdutoServlet">Visualizar Produtos</a></li>
 				</ul>
 			</div>
 		</div>

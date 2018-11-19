@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ucsal.loja.model.Loja;
+import br.ucsal.loja.model.Papel;
 import br.ucsal.utilis.ConnectionFactory;
 
 public class LojaDao {
@@ -18,6 +19,26 @@ public class LojaDao {
 		this.connection = ConnectionFactory.getConnection();
 	}
 
+	public Loja login(String login, String senha) {
+		//TODO Usuario Fake Mock
+		Loja lojaLogin = new Loja();
+		lojaLogin.setLogin(login);
+		//usuario.se
+		if(login.equals("teste1")) {
+			if(senha.equals("123")) {
+			Papel papel = new Papel();
+			papel.setId(1l);
+			lojaLogin.setPapel(papel);
+			}else{
+				return null;
+			}
+		}else {
+			return null;
+		}
+		return lojaLogin;
+	}
+
+	
 	public void adiciona(Loja loja) {
 		String sql = "insert into lojas " + "(nome,email,login,senha,bairro)" + " values (?,?,?,?,?)";
 		try {
