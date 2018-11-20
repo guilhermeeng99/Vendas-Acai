@@ -36,11 +36,7 @@ public class LoginServlet extends HttpServlet {
 		if (lojaLogin != null) {
 
 			request.getSession().setAttribute("lojaLogin", lojaLogin);
-			if (lojaLogin.getPapel().getId() == 1l) {
-				response.sendRedirect("/ListarLojaServlet");
-			} else if (lojaLogin.getPapel().getId() == 2l) {
-				response.sendRedirect("/");
-			}
+			response.sendRedirect("/ListarLojaServlet");
 
 		} else {
 			request.setAttribute("erro", "Usuario ou Senha invalidos");

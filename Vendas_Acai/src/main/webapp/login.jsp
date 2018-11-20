@@ -47,7 +47,7 @@
 					<div class="table-responsive">
 						<h2>Logar Loja</h2>
 						<br>
-						<form action="/LoginServlet" method="POST">
+						<form action="LoginServlet" method="POST">
 							
 							<div class="form-group">
 								<label>Login</label> <input class="form-control" type="text"

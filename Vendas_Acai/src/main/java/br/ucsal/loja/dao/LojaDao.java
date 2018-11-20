@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.ucsal.loja.model.Loja;
-import br.ucsal.loja.model.Papel;
 import br.ucsal.utilis.ConnectionFactory;
 
 public class LojaDao {
@@ -20,25 +19,28 @@ public class LojaDao {
 	}
 
 	public Loja login(String login, String senha) {
-		//TODO Usuario Fake Mock
 		Loja lojaLogin = new Loja();
-		lojaLogin.setLogin(login);
-		//usuario.se
-		if(login.equals("teste1")) {
-			if(senha.equals("123")) {
-			Papel papel = new Papel();
-			papel.setId(1l);
-			lojaLogin.setPapel(papel);
-			}else{
+		String sql = "select * from lojas where login=? and senha=?";
+
+		try {
+			PreparedStatement stmt = connection.prepareStatement(sql);
+			stmt.setString(1, login);
+			stmt.setString(2, senha);
+
+			ResultSet rs = stmt.executeQuery();
+
+			if (!rs.next()) {
 				return null;
 			}
-		}else {
-			return null;
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
 		}
+
 		return lojaLogin;
+
 	}
 
-	
 	public void adiciona(Loja loja) {
 		String sql = "insert into lojas " + "(nome,email,login,senha,bairro)" + " values (?,?,?,?,?)";
 		try {
@@ -89,6 +91,31 @@ public class LojaDao {
 			List<Loja> lojas = new ArrayList<Loja>();
 			String sql = "select * from lojas";
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
+			ResultSet rs = stmt.executeQuery();
+			while (rs.next()) {
+				Loja loja = new Loja();
+				loja.setId(rs.getLong("id"));
+				loja.setNome(rs.getString("nome"));
+				loja.setEmail(rs.getString("email"));
+				loja.setLogin(rs.getString("login"));
+				loja.setSenha(rs.getString("senha"));
+				loja.setBairro(rs.getString("bairro"));
+				lojas.add(loja);
+			}
+			rs.close();
+			stmt.close();
+			return lojas;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public List<Loja> getLista(Long id) {
+		try {
+			List<Loja> lojas = new ArrayList<Loja>();
+			String sql = "select * from lojas where id=?";
+			PreparedStatement stmt = this.connection.prepareStatement(sql);
+			stmt.setLong(1, id);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Loja loja = new Loja();

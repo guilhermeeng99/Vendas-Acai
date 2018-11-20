@@ -9,8 +9,6 @@ public class Loja {
 	private String senha;
 	private String bairro;
 	private String respostaComentario;
-	
-	private Papel papel;
 
 	public Loja() {
 
@@ -83,13 +81,4 @@ public class Loja {
 		this.respostaComentario = respostaComentario;
 	}
 
-	public Papel getPapel() {
-		return papel;
-	}
-
-	public void setPapel(Papel papel) {
-		this.papel = papel;
-	}
-
-	
 }
