@@ -23,8 +23,6 @@ public class ListarLojaServlet extends HttpServlet {
 			throws ServletException, IOException {
 		LojaDao lojaDao = new LojaDao();
 
-
-		
 			request.setAttribute("loja", lojaDao.getLista());
 			RequestDispatcher rd = request.getRequestDispatcher("listarLoja.jsp");
 			rd.forward(request, response);

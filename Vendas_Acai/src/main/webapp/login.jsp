@@ -36,7 +36,12 @@
 				</button>
 				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
 			</div>
+			<div class="navbar-collapse collapse">
 
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
@@ -48,7 +53,7 @@
 						<h2>Logar Loja</h2>
 						<br>
 						<form action="LoginServlet" method="POST">
-							
+
 							<div class="form-group">
 								<label>Login</label> <input class="form-control" type="text"
 									name="login" />
@@ -57,7 +62,7 @@
 								<label>Senha</label> <input class="form-control" type="password"
 									name="senha" />
 							</div>
-							
+
 							<button type="submit" class="btn btn-dark">Inserir</button>
 						</form>
 					</div>
@@ -74,7 +79,6 @@
 
 				<div class="col-lg-5">
 					<h4>SOBRE O PROJETO:</h4>
-					<a href="ListarLojaServlet">Consulta</a>
 					<p>Um site de vendas de açaí interativo com os usuários, de
 						forma que os mesmos não precisem mais ir até o local de vendas ou
 						pegar filas para comprar o açaí, já que os usuários receberão em

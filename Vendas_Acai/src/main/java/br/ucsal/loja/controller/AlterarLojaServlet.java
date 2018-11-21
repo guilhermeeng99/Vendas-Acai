@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.ucsal.loja.dao.LojaDao;
 import br.ucsal.loja.model.Loja;
@@ -29,7 +30,8 @@ public class AlterarLojaServlet extends HttpServlet {
 
 		Loja loja = lojaDao.getLoja(Long.parseLong(id));
 
-		req.setAttribute("loja", loja);
+		HttpSession sessao = req.getSession();
+		sessao.setAttribute("lojaAntiga", loja);
 		RequestDispatcher rd = req.getRequestDispatcher("alterarLoja.jsp");
 		rd.forward(req, resp);
 
@@ -37,27 +39,24 @@ public class AlterarLojaServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		HttpSession sessao = request.getSession();
 		Loja loja = new Loja();
-
-		String id = request.getParameter("id");
+		
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		String bairro = request.getParameter("bairro");
-
-		loja.setId(Long.parseLong(id));
 		loja.setNome(nome);
 		loja.setEmail(email);
 		loja.setLogin(login);
 		loja.setSenha(senha);
 		loja.setBairro(bairro);
-
-		LojaDao lojaDao;
-
-		lojaDao = new LojaDao();
+		LojaDao lojaDao = new LojaDao();
+		loja.setId(lojaDao.getId(loja,(Loja) sessao.getAttribute("lojaAntiga")));
 		lojaDao.altera(loja);
+		
+		sessao.setAttribute("lojaLogin", loja);
 
 		response.sendRedirect("/ListarLojaServlet");
 	}

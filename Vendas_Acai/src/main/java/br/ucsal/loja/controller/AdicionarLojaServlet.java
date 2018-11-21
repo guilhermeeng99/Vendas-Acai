@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.ucsal.loja.dao.LojaDao;
 import br.ucsal.loja.model.Loja;
@@ -37,11 +38,12 @@ public class AdicionarLojaServlet extends HttpServlet {
 		loja.setSenha(senha);
 		loja.setBairro(bairro);
 
-		LojaDao lojaDao;
-
-		lojaDao = new LojaDao();
+		LojaDao lojaDao = new LojaDao();
 		lojaDao.adiciona(loja);
-
+		lojaDao.login(loja);
+		Loja lojaLogin = lojaDao.login(loja);
+		HttpSession sessao = request.getSession();
+		sessao.setAttribute("lojaLogin", lojaLogin);
 		response.sendRedirect("/adicionarProduto.jsp");
 
 	}

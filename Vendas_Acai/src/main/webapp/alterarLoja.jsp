@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="br.ucsal.loja.model.Loja"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -23,7 +24,9 @@
 </head>
 
 <body>
-
+	<%
+		Loja lojaLogin = (Loja) session.getAttribute("lojaLogin");
+	%>
 
 
 	<div class="navbar navbar-inverse navbar-static-top">
@@ -37,9 +40,13 @@
 				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
 			</div>
 			<div class="navbar-collapse collapse">
+				
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="ListarLojaServlet">Visualizar Lojas</a></li>
-					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+					<li><a href="LoginServlet">Sair Loja</a></li>
+					<li><a href="ListarLojaServlet"> <%
+ 	out.print(lojaLogin.getNome());
+ %>
+					</a></li>
 				</ul>
 			</div>
 		</div>
@@ -51,28 +58,27 @@
 				<div class="col-lg-8 col-lg-offset-2 centered">
 					<div class="table-responsive">
 						<h2>Alterar Loja</h2>
-						<br> <a href="adicionarProduto.jsp">Adicionar Produto</a>
+						<br>
 						<form action="AlterarLojaServlet" method="POST">
-							<input type="hidden" name="id" value="${loja.id}">
 							<div class="form-group">
 								<label>Nome da Loja</label> <input class="form-control"
-									type="text" name="nome" value="${loja.nome}" />
+									type="text" name="nome" value="${lojaLogin.getNome()}" />
 							</div>
 							<div class="form-group">
 								<label>E-mail</label> <input class="form-control" type="text"
-									name="email" value="${loja.email}" />
+									name="email" value="${lojaLogin.getEmail()}" />
 							</div>
 							<div class="form-group">
 								<label>Login</label> <input class="form-control" type="text"
-									name="login" value="${loja.login}" />
+									name="login" value="${lojaLogin.getLogin()}" />
 							</div>
 							<div class="form-group">
 								<label>Senha</label> <input class="form-control" type="text"
-									name="senha" value="${loja.senha}" />
+									name="senha" value="${lojaLogin.getSenha()}" />
 							</div>
 							<div class="form-group">
 								<label>Bairro</label> <input class="form-control" type="text"
-									name="bairro" value="${loja.bairro}" />
+									name="bairro" value="${lojaLogin.getBairro()}" />
 							</div>
 							<button type="submit" class="btn btn-primary mb-2">Inserir</button>
 						</form>

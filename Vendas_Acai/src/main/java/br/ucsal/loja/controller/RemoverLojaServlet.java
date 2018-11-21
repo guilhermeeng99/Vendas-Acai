@@ -21,14 +21,10 @@ public class RemoverLojaServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		String id = req.getParameter("id");
-
 		LojaDao lojaDao = new LojaDao();
+		lojaDao.remove(Long.parseLong(req.getParameter("id")));
 
-		lojaDao.remove(Long.parseLong(id));
-
-		RequestDispatcher rd = req.getRequestDispatcher("/ListarLojaServlet");
+		RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
 		rd.forward(req, resp);
 	}
 }

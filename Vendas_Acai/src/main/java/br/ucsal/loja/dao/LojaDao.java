@@ -18,26 +18,33 @@ public class LojaDao {
 		this.connection = ConnectionFactory.getConnection();
 	}
 
-	public Loja login(String login, String senha) {
-		Loja lojaLogin = new Loja();
+	public Loja login(Loja loja) {
+		Loja lojaReturn = null;
 		String sql = "select * from lojas where login=? and senha=?";
 
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
-			stmt.setString(1, login);
-			stmt.setString(2, senha);
+			stmt.setString(1, loja.getLogin());
+			stmt.setString(2, loja.getSenha());
 
 			ResultSet rs = stmt.executeQuery();
 
-			if (!rs.next()) {
-				return null;
+			if (rs.next()) {
+				lojaReturn = new Loja();
+				lojaReturn.setId(rs.getInt("id"));
+				lojaReturn.setNome(rs.getString("nome"));
+				lojaReturn.setEmail(rs.getString("email"));
+				lojaReturn.setLogin(rs.getString("login"));
+				lojaReturn.setSenha(rs.getString("senha"));
+				lojaReturn.setBairro(rs.getString("bairro"));
+
 			}
 
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
 
-		return lojaLogin;
+		return lojaReturn;
 
 	}
 
@@ -81,6 +88,7 @@ public class LojaDao {
 			stmt.setLong(6, loja.getId());
 			stmt.execute();
 			stmt.close();
+
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
@@ -105,6 +113,31 @@ public class LojaDao {
 			rs.close();
 			stmt.close();
 			return lojas;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	public Long getId(Loja loja,Loja antiga) {
+		try {
+			List<Loja> lojas = new ArrayList<Loja>();
+			String sql = "select * from lojas where nome=? and email=? and login=? and senha=? and bairro=?";
+			PreparedStatement stmt = this.connection.prepareStatement(sql);
+			stmt.setString(1, antiga.getNome());
+			stmt.setString(2, antiga.getEmail());
+			stmt.setString(3, antiga.getLogin());
+			stmt.setString(4, antiga.getSenha());
+			stmt.setString(5, antiga.getBairro());
+			ResultSet rs = stmt.executeQuery();		
+			Long val = 0l;
+			while (rs.next()) {
+				val = rs.getLong("id");
+				loja.setId(rs.getLong("id"));
+				lojas.add(loja);
+			}
+			rs.close();
+			stmt.close();
+			return val;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="br.ucsal.loja.model.Loja"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -23,7 +24,9 @@
 </head>
 
 <body>
-
+	<%
+		Loja lojaLogin = (Loja) session.getAttribute("lojaLogin");
+	%>
 
 
 	<div class="navbar navbar-inverse navbar-static-top">
@@ -38,8 +41,11 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="login.jsp">Logar Loja</a></li>
-					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+					<li><a href="LoginServlet">Sair Loja</a></li>
+					<li><a href="ListarLojaServlet"> <%
+ 	out.print(lojaLogin.getNome());
+ %>
+					</a></li>
 				</ul>
 			</div>
 		</div>
@@ -65,22 +71,50 @@
 							</tr>
 						<thead>
 						<tbody>
-							<c:forEach var="l" items="${loja}">
-								<tr>
-									<td>${l.id}</td>
-									<td>${l.nome}</td>
-									<td>${l.email}</td>
-									<td>${l.login}</td>
-									<td>${l.senha}</td>
-									<td>${l.bairro}</td>
-									<td><a href="AlterarLojaServlet?id=${l.id}">ALTERAR</a></td>
-									<td><a href="RemoverLojaServlet?id=${l.id}">REMOVER</a></td>
-								</tr>
-							</c:forEach>
+
+							<tr>
+								<td>
+									<%
+										out.print(lojaLogin.getId());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(lojaLogin.getNome());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(lojaLogin.getEmail());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(lojaLogin.getLogin());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(lojaLogin.getSenha());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(lojaLogin.getBairro());
+									%>
+								</td>
+								<td><a href="AlterarLojaServlet?id=${lojaLogin.getId()}">ALTERAR</a></td>
+								<td><a href="RemoverLojaServlet?id=${lojaLogin.getId()}">REMOVER</a></td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
-
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<br> <br>
+					<h4>
+						<a href="adicionarProduto.jsp">Adicionar Novo Produto</a>
+					</h4>
+				</div>
 			</div>
 		</div>
 	</div>
