@@ -44,7 +44,7 @@ public class AdicionarLojaServlet extends HttpServlet {
 		Loja lojaLogin = lojaDao.login(loja);
 		HttpSession sessao = request.getSession();
 		sessao.setAttribute("lojaLogin", lojaLogin);
-		response.sendRedirect("/adicionarProduto.jsp");
+		response.sendRedirect("/ListarLojaServlet");
 
 	}
 

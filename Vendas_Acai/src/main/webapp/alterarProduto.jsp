@@ -71,7 +71,7 @@
 									name="preco" value="${produto.preco}" />
 							</div>
 
-							<button type="submit" class="btn btn-primary mb-2">Inserir</button>
+							<button type="submit" class="btn btn-dark">Inserir</button>
 						</form>
 					</div>
 

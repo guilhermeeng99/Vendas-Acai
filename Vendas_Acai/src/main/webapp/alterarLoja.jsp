@@ -80,7 +80,7 @@
 								<label>Bairro</label> <input class="form-control" type="text"
 									name="bairro" value="${lojaLogin.getBairro()}" />
 							</div>
-							<button type="submit" class="btn btn-primary mb-2">Inserir</button>
+							<button type="submit" class="btn btn-dark">Inserir</button>
 						</form>
 					</div>
 
