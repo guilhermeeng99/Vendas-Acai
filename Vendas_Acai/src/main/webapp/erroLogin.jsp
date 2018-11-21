@@ -7,13 +7,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="shortcut icon" href="assetss/img/acai_icon.png">
 
-<title>Vendas Açaí</title>
+<title>Açaí Point</title>
 
 <link href="assetss/css/bootstrap.css" rel="stylesheet">
 
 <link href="assetss/css/main.css" rel="stylesheet">
 
 </head>
+
 <body>
 
 	<div class="navbar navbar-inverse navbar-static-top">
@@ -24,7 +25,9 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
+				<a class="navbar-brand" href="ListarProdutoServlet"><img
+					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
+					width="55"> Açaí Point</a>
 			</div>
 
 		</div>
@@ -38,7 +41,9 @@
 						<h2>Erro ao logar</h2>
 						<h3>Usuário ou senha incorretos</h3>
 						<br>
-						<h3><a href="login.jsp">Tentar Novamente</a></h3>
+						<h3>
+							<a href="login.jsp">Tentar Novamente</a>
+						</h3>
 					</div>
 
 				</div>
