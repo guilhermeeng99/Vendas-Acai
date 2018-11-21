@@ -5,26 +5,17 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
 <link rel="shortcut icon" href="assetss/img/acai_icon.png">
 
 <title>Vendas Açaí</title>
 
 <link href="assetss/css/bootstrap.css" rel="stylesheet">
 
-
 <link href="assetss/css/main.css" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="assets/js/hover.zoom.js"></script>
-<script src="assets/js/hover.zoom.conf.js"></script>
 
 </head>
 
 <body>
-
-
 
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -45,11 +36,12 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
-					<h2>Cadastrar Produto</h2><br>
+						<h2>Cadastrar Produto</h2>
+						<br>
 						<form action="AdicionarProdutoServlet" method="POST">
 							<div class="form-group">
-								<label>Nome do Produto</label> <input
-									class="form-control" type="text" name="nome" />
+								<label>Nome do Produto</label> <input class="form-control"
+									type="text" name="nome" />
 							</div>
 							<div class="form-group">
 								<label>Conteúdo</label> <input class="form-control" type="text"
@@ -101,6 +93,5 @@
 		</div>
 	</div>
 
-	<script src="assetss/js/bootstrap.min.js"></script>
 </body>
 </html>

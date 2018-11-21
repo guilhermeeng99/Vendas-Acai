@@ -6,20 +6,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="">
-<meta name="author" content="">
 <link rel="shortcut icon" href="assetss/img/acai_icon.png">
 
 <title>Vendas Açaí</title>
 
 <link href="assetss/css/bootstrap.css" rel="stylesheet">
 
-
 <link href="assetss/css/main.css" rel="stylesheet">
-
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-<script src="assets/js/hover.zoom.js"></script>
-<script src="assets/js/hover.zoom.conf.js"></script>
 
 </head>
 
@@ -27,7 +20,6 @@
 	<%
 		Loja lojaLogin = (Loja) session.getAttribute("lojaLogin");
 	%>
-
 
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -40,7 +32,7 @@
 				<a class="navbar-brand" href="ListarProdutoServlet">Vendas Açaí</a>
 			</div>
 			<div class="navbar-collapse collapse">
-				
+
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="LoginServlet">Sair Loja</a></li>
 					<li><a href="ListarLojaServlet"> <%
@@ -117,6 +109,5 @@
 		</div>
 	</div>
 
-	<script src="assetss/js/bootstrap.min.js"></script>
 </body>
 </html>
