@@ -29,6 +29,13 @@
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right pt navbar-brand-mt">
+						<li><a href="adicionarUsuario.jsp">Cadastrar Usuário</a></li>
+						<li><a href="LoginServlet">Logar Loja</a></li>
+						<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 

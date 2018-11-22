@@ -119,7 +119,7 @@
 
 				<div class="col-lg-5">
 					<h4>SOBRE O PROJETO:</h4>
-					<a href="ListarLojasServlet">Administrador</a>
+					<a href="AdminListarServlet">Administrador</a>
 					<p>Um site de vendas de açaí interativo com os usuários, de
 						forma que os mesmos não precisem mais ir até o local de vendas ou
 						pegar filas para comprar o açaí, já que os usuários receberão em

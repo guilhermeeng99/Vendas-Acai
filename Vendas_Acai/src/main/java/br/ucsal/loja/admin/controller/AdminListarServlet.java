@@ -10,21 +10,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.usuario.dao.UsuarioDao;
 
-@WebServlet("/ListarLojasServlet")
-public class ListarLojasServlet extends HttpServlet {
+@WebServlet("/AdminListarServlet")
+public class AdminListarServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ListarLojasServlet() {
+	public AdminListarServlet() {
 		super();
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		LojaDao lojaDao = new LojaDao();
+		UsuarioDao usuarioDao= new UsuarioDao();
 
+		request.setAttribute("usuario", usuarioDao.getLista());
 		request.setAttribute("loja", lojaDao.getLista());
-		RequestDispatcher rd = request.getRequestDispatcher("listarLojas.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
 		rd.forward(request, response);
 
 	}

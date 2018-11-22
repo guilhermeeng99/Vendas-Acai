@@ -109,6 +109,12 @@ a:after {
 	letter-spacing: 2px;
 }
 
+.navbar-brand-mt {
+	font-weight: 500;
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+
 .navbar-inverse .navbar-brand {
 	color: white;
 }

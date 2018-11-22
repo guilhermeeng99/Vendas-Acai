@@ -34,7 +34,7 @@
 					width="55"> Açaí Point</a>
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right">
+				<ul class="nav navbar-nav navbar-right pt navbar-brand">
 					<li><a href="LoginServlet">Sair Loja</a></li>
 					<li><a href="ListarLojaServlet"> <%
  	out.print(lojaLogin.getNome());

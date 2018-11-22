@@ -11,22 +11,24 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.ucsal.usuario.dao.UsuarioDao;
 
-@WebServlet("/ListarUsuariosServlet")
-public class ListarUsuariosServlet extends HttpServlet {
+@WebServlet("/RemoverUsuariosServlet")
+public class RemoverUsuariosServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ListarUsuariosServlet() {
+	public RemoverUsuariosServlet() {
 		super();
+
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String id = req.getParameter("id");
+
 		UsuarioDao usuarioDao = new UsuarioDao();
 
-		request.setAttribute("usuario", usuarioDao.getLista());
-		RequestDispatcher rd = request.getRequestDispatcher("listarUsuarios.jsp");
-		rd.forward(request, response);
+		usuarioDao.remove(Long.parseLong(id));
 
+		RequestDispatcher rd = req.getRequestDispatcher("/AdminListarServlet");
+		rd.forward(req, resp);
 	}
-
 }
