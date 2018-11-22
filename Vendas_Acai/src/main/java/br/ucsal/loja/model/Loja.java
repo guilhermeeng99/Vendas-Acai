@@ -8,21 +8,18 @@ public class Loja {
 	private String login;
 	private String senha;
 	private String bairro;
-	private String respostaComentario;
 
 	public Loja() {
 
 	}
 
-	public Loja(long id, String nome, String email, String login, String senha, String bairro,
-			String respostaComentario) {
+	public Loja(long id, String nome, String email, String login, String senha, String bairro) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
 		this.login = login;
 		this.senha = senha;
 		this.bairro = bairro;
-		this.respostaComentario = respostaComentario;
 	}
 
 	public long getId() {
@@ -71,14 +68,6 @@ public class Loja {
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
-	}
-
-	public String getRespostaComentario() {
-		return respostaComentario;
-	}
-
-	public void setRespostaComentario(String respostaComentario) {
-		this.respostaComentario = respostaComentario;
 	}
 
 }

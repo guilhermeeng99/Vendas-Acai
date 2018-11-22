@@ -29,6 +29,7 @@
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
+
 		</div>
 	</div>
 
@@ -36,24 +37,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
-					<div class="table-responsive">
-						<h2>Logar Loja</h2>
-						<br>
-						<form action="LoginServlet" method="POST">
-
-							<div class="form-group">
-								<label>Login</label> <input class="form-control" type="text"
-									name="login" />
-							</div>
-							<div class="form-group">
-								<label>Senha</label> <input class="form-control" type="password"
-									name="senha" />
-							</div>
-
-							<button type="submit" class="btn btn-dark">Inserir</button>
-						</form>
-					</div>
-
+					<ul class="nav navbar-nav pt navbar-brand">
+						<li><a href="LoginUsuarioServlet">Logar Usuário</a></li>
+						<li><a href="adicionarUsuario.jsp">Cadastrar Usuário</a></li>
+						<li><a href="LoginServlet">Logar Loja</a></li>
+						<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+					</ul>
 				</div>
 			</div>
 		</div>

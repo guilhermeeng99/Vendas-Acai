@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@page import="br.ucsal.usuario.model.Usuario"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -16,6 +17,9 @@
 </head>
 
 <body>
+	<%
+		Usuario usuarioLogin = (Usuario) session.getAttribute("usuarioLogin");
+	%>
 
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -29,36 +33,79 @@
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right pt navbar-brand">
+					<li><a href="LoginUsuarioServlet">Sair Usuário</a></li>
+					<li><a href="ListarUsuarioServlet"> <%
+ 	out.print(usuarioLogin.getNome());
+ %>
+					</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
 	<div id="ww">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4 centered">
-					<div class="table-responsive">
-						<h2>Logar Loja</h2>
-						<br>
-						<form action="LoginServlet" method="POST">
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<h2>Tabela de Usuario</h2>
+					<br>
+					<table>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nome</th>
+								<th>Email</th>
+								<th>Login</th>
+								<th>Senha</th>
+								<th>Bairro</th>
+								<th>Alterar</th>
+								<th>Remover</th>
+							</tr>
+						<thead>
+						<tbody>
 
-							<div class="form-group">
-								<label>Login</label> <input class="form-control" type="text"
-									name="login" />
-							</div>
-							<div class="form-group">
-								<label>Senha</label> <input class="form-control" type="password"
-									name="senha" />
-							</div>
-
-							<button type="submit" class="btn btn-dark">Inserir</button>
-						</form>
-					</div>
-
+							<tr>
+								<td>
+									<%
+										out.print(usuarioLogin.getId());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(usuarioLogin.getNome());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(usuarioLogin.getEmail());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(usuarioLogin.getLogin());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(usuarioLogin.getSenha());
+									%>
+								</td>
+								<td>
+									<%
+										out.print(usuarioLogin.getBairro());
+									%>
+								</td>
+								<td><a href="AlterarUsuarioServlet?id=${usuarioLogin.getId()}">ALTERAR</a></td>
+								<td><a href="RemoverUsuarioServlet?id=${usuarioLogin.getId()}">REMOVER</a></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 	<div id="footer">
 		<div class="container">
@@ -66,6 +113,7 @@
 
 				<div class="col-lg-5">
 					<h4>SOBRE O PROJETO:</h4>
+					<a href="ListarLojasServlet">Administrador</a>
 					<p>Um site de vendas de açaí interativo com os usuários, de
 						forma que os mesmos não precisem mais ir até o local de vendas ou
 						pegar filas para comprar o açaí, já que os usuários receberão em
@@ -75,6 +123,7 @@
 				</div>
 				<div class="col-lg-6 ">
 					<h4>
+					<a href="ListarUsuariosServlet">Administrador</a>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a>
 					</h4>

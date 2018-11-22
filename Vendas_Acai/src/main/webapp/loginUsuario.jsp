@@ -37,9 +37,9 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
-						<h2>Logar Loja</h2>
+						<h2>Logar Usuário</h2>
 						<br>
-						<form action="LoginServlet" method="POST">
+						<form action="LoginUsuarioServlet" method="POST">
 
 							<div class="form-group">
 								<label>Login</label> <input class="form-control" type="text"

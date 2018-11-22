@@ -1,22 +1,25 @@
-package br.ucsal.loja.admin.model;
+package br.ucsal.usuario.model;
 
-public class Admin {
+public class Usuario {
 
 	private long id;
 	private String nome;
+	private String email;
 	private String login;
 	private String senha;
+	private String bairro;
 
-	public Admin() {
+	public Usuario() {
 
 	}
 
-	public Admin(long id, String nome, String login, String senha) {
-		super();
+	public Usuario(long id, String nome, String email, String login, String senha, String bairro) {
 		this.id = id;
 		this.nome = nome;
+		this.email = email;
 		this.login = login;
 		this.senha = senha;
+		this.bairro = bairro;
 	}
 
 	public long getId() {
@@ -35,6 +38,14 @@ public class Admin {
 		this.nome = nome;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public String getLogin() {
 		return login;
 	}
@@ -49,6 +60,14 @@ public class Admin {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 
 }

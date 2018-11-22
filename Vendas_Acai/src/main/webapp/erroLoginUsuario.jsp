@@ -29,6 +29,7 @@
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
+
 		</div>
 	</div>
 
@@ -37,21 +38,12 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
-						<h2>Logar Loja</h2>
+						<h2>Erro ao logar</h2>
+						<h3>Usuário ou senha incorretos</h3>
 						<br>
-						<form action="LoginServlet" method="POST">
-
-							<div class="form-group">
-								<label>Login</label> <input class="form-control" type="text"
-									name="login" />
-							</div>
-							<div class="form-group">
-								<label>Senha</label> <input class="form-control" type="password"
-									name="senha" />
-							</div>
-
-							<button type="submit" class="btn btn-dark">Inserir</button>
-						</form>
+						<h3>
+							<a href="loginUsuario.jsp">Tentar Novamente</a>
+						</h3>
 					</div>
 
 				</div>
