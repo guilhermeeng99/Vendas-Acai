@@ -25,11 +25,17 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="index.jsp"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
-
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-right pt navbar-brand-mt">
+						<li><a href="cadastrarLoja.jsp">Cadastrar Loja</a></li>
+						<li><a href="LogarUsuarioServlet">Logar Usuário</a></li>
+						<li><a href="cadastrarUsuario.jsp">Cadastrar Usuário</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 
@@ -38,25 +44,19 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
-						<h2>Cadastrar Produto</h2>
+						<h2>Logar Loja</h2>
 						<br>
-						<form action="AdicionarProdutoServlet" method="POST">
+						<form action="LogarLojaServlet" method="POST">
+
 							<div class="form-group">
-								<label>Nome do Produto</label> <input class="form-control"
-									type="text" name="nome" />
+								<label>Login</label> <input class="form-control" type="text"
+									name="login" />
 							</div>
 							<div class="form-group">
-								<label>Conteúdo</label> <input class="form-control" type="text"
-									name="conteudo" />
+								<label>Senha</label> <input class="form-control" type="password"
+									name="senha" />
 							</div>
-							<div class="form-group">
-								<label>Gramas</label> <input class="form-control" type="text"
-									name="gramas" />
-							</div>
-							<div class="form-group">
-								<label>Preço</label> <input class="form-control" type="text"
-									name="preco" />
-							</div>
+
 							<button type="submit" class="btn btn-dark">Inserir</button>
 						</form>
 					</div>

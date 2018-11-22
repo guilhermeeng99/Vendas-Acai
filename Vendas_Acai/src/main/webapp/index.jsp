@@ -25,7 +25,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="index.jsp"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
@@ -38,10 +38,10 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<ul class="nav navbar-nav pt navbar-brand">
-						<li><a href="LoginUsuarioServlet">Logar Usuário</a></li>
-						<li><a href="adicionarUsuario.jsp">Cadastrar Usuário</a></li>
-						<li><a href="LoginServlet">Logar Loja</a></li>
-						<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+						<li><a href="LogarUsuarioServlet">Logar Usuário</a></li>
+						<li><a href="cadastrarUsuario.jsp">Cadastrar Usuário</a></li>
+						<li><a href="LogarLojaServlet">Logar Loja</a></li>
+						<li><a href="cadastrarLoja.jsp">Cadastrar Loja</a></li>
 					</ul>
 				</div>
 			</div>

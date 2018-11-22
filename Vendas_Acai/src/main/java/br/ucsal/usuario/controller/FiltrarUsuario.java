@@ -14,16 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @WebFilter("/loginUsuario.jsp/*")
-public class FiltroUsuario implements Filter {
+public class FiltrarUsuario implements Filter {
 
-    public FiltroUsuario() {
+    public FiltrarUsuario() {
     }
 
 	public void destroy() {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		//HttpSession sessao = request.getSession();
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		
 		String url = httpServletRequest .getRequestURI();
@@ -31,7 +30,7 @@ public class FiltroUsuario implements Filter {
 		HttpSession sessao = httpServletRequest .getSession();
 		
 		if (sessao.getAttribute("usuarioLogin")!=null || url.lastIndexOf("loginUsuario.jsp")>-1 ||
-		url.lastIndexOf("LoginUsuarioServlet") >-1 ){
+		url.lastIndexOf("LogarUsuarioServlet") >-1 ){
 		chain.doFilter(request, response);
 		}else{
 		((HttpServletResponse) response).sendRedirect("loginUsuario.jsp");

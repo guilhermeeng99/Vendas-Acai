@@ -25,15 +25,14 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="ListarProdutoLojaServlet"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
 			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right pt navbar-brand-mt">
-					<li><a href="LoginServlet">Logar Loja</a></li>
-					<li><a href="LoginUsuarioServlet">Logar Usuário</a></li>
-					<li><a href="adicionarUsuario.jsp">Cadastrar Usuário</a></li>
+				<ul class="nav navbar-nav navbar-right pt navbar-brand">
+					<li><a href="ListarLojaServlet">Minha Loja</a></li>
+					<li><a href="LogarLojaServlet">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -42,40 +41,41 @@
 	<div id="ww">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4 centered">
-					<div class="table-responsive">
-						<h2>Cadastrar Loja</h2>
-						<br>
-						<form action="AdicionarLojaServlet" method="POST">
-							<div class="form-group">
-								<label>Nome da Loja</label> <input class="form-control"
-									type="text" name="nome" />
-							</div>
-							<div class="form-group">
-								<label>E-mail</label> <input class="form-control" type="text"
-									name="email" />
-							</div>
-							<div class="form-group">
-								<label>Login</label> <input class="form-control" type="text"
-									name="login" />
-							</div>
-							<div class="form-group">
-								<label>Senha</label> <input class="form-control" type="password"
-									name="senha" />
-							</div>
-							<div class="form-group">
-								<label>Bairro</label> <input class="form-control" type="text"
-									name="bairro" />
-							</div>
-							<button type="submit" class="btn btn-dark">Inserir</button>
-						</form>
-					</div>
+				<div class="col-lg-8 col-lg-offset-2 centered">
+					<h2>Tabela de Produtos</h2>
+					<br>
+					<table>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nome</th>
+								<th>Conteúdo</th>
+								<th>Gramas</th>
+								<th>Preço</th>
+								<th>Alterar</th>
+								<th>Remover</th>
+							</tr>
+						<thead>
+						<tbody>
+							<c:forEach var="p" items="${produto}">
+								<tr>
+									<td>${p.id}</td>
+									<td>${p.nome}</td>
+									<td>${p.conteudo}</td>
+									<td>${p.gramas}</td>
+									<td>${p.preco}</td>
+									<td><a href="AlterarProdutoServlet?id=${p.id}">ALTERAR</a></td>
+									<td><a href="RemoverProdutoServlet?id=${p.id}">REMOVER</a></td>
 
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
+
 			</div>
 		</div>
 	</div>
-
 
 	<div id="footer">
 		<div class="container">

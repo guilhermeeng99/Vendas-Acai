@@ -25,15 +25,15 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="index.jsp"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand-mt">
-					<li><a href="LoginUsuarioServlet">Logar Usuário</a></li>
-					<li><a href="LoginServlet">Logar Loja</a></li>
-					<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+					<li><a href="LogarLojaServlet">Logar Loja</a></li>
+					<li><a href="LogarUsuarioServlet">Logar Usuário</a></li>
+					<li><a href="cadastrarUsuario.jsp">Cadastrar Usuário</a></li>
 				</ul>
 			</div>
 		</div>
@@ -44,11 +44,11 @@
 			<div class="row">
 				<div class="col-lg-4 col-lg-offset-4 centered">
 					<div class="table-responsive">
-						<h2>Cadastrar Usuário</h2>
+						<h2>Cadastrar Loja</h2>
 						<br>
-						<form action="AdicionarUsuarioServlet" method="POST">
+						<form action="CadastrarLojaServlet" method="POST">
 							<div class="form-group">
-								<label>Nome do Usuário</label> <input class="form-control"
+								<label>Nome da Loja</label> <input class="form-control"
 									type="text" name="nome" />
 							</div>
 							<div class="form-group">
@@ -87,8 +87,6 @@
 						forma que os mesmos não precisem mais ir até o local de vendas ou
 						pegar filas para comprar o açaí, já que os usuários receberão em
 						casa.</p>
-
-
 				</div>
 				<div class="col-lg-6 ">
 					<h4>

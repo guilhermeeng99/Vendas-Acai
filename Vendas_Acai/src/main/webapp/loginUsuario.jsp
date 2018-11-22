@@ -25,15 +25,15 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="index.jsp"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand-mt">
-						<li><a href="adicionarUsuario.jsp">Cadastrar Usuário</a></li>
-						<li><a href="LoginServlet">Logar Loja</a></li>
-						<li><a href="adicionarLoja.jsp">Cadastrar Loja</a></li>
+						<li><a href="cadastrarUsuario.jsp">Cadastrar Usuário</a></li>
+						<li><a href="LogarLojaServlet">Logar Loja</a></li>
+						<li><a href="cadastrarLoja.jsp">Cadastrar Loja</a></li>
 				</ul>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 					<div class="table-responsive">
 						<h2>Logar Usuário</h2>
 						<br>
-						<form action="LoginUsuarioServlet" method="POST">
+						<form action="LogarUsuarioServlet" method="POST">
 
 							<div class="form-group">
 								<label>Login</label> <input class="form-control" type="text"

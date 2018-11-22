@@ -29,13 +29,13 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="ListarProdutoLojaServlet"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand">
-					<li><a href="LoginServlet">Sair Loja</a></li>
+					<li><a href="LogarLojaServlet">Sair Loja</a></li>
 					<li><a href="ListarLojaServlet"> <%
  	out.print(lojaLogin.getNome());
  %>
@@ -106,7 +106,7 @@
 				<div class="col-lg-8 col-lg-offset-2 centered">
 					<br> <br>
 					<h4>
-						<a href="adicionarProduto.jsp">Adicionar Novo Produto</a>
+						<a href="cadastrarProduto.jsp">Adicionar Novo Produto</a>
 					</h4>
 				</div>
 			</div>

@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletResponse;
 import br.ucsal.produto.dao.ProdutoDao;
 import br.ucsal.produto.model.Produto;
 
-@WebServlet("/AdicionarProdutoServlet")
-public class AdicionarProdutoServlet extends HttpServlet {
+@WebServlet("/CadastrarProdutoServlet")
+public class CadastrarProdutoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AdicionarProdutoServlet() {
+	public CadastrarProdutoServlet() {
 		super();
 
 	}

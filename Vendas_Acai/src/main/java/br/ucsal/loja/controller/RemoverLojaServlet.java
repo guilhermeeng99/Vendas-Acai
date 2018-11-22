@@ -24,7 +24,7 @@ public class RemoverLojaServlet extends HttpServlet {
 		LojaDao lojaDao = new LojaDao();
 		lojaDao.remove(Long.parseLong(req.getParameter("id")));
 
-		RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
+		RequestDispatcher rd = req.getRequestDispatcher("/loginLoja.jsp");
 		rd.forward(req, resp);
 	}
 }

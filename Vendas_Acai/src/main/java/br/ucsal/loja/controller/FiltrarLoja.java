@@ -13,28 +13,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebFilter("/login.jsp/*")
-public class FiltroLoja implements Filter {
+@WebFilter("/loginLoja.jsp/*")
+public class FiltrarLoja implements Filter {
 
-    public FiltroLoja() {
+    public FiltrarLoja() {
     }
 
 	public void destroy() {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		//HttpSession sessao = request.getSession();
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		
 		String url = httpServletRequest .getRequestURI();
 		
 		HttpSession sessao = httpServletRequest .getSession();
 		
-		if (sessao.getAttribute("lojaLogin")!=null || url.lastIndexOf("login.jsp")>-1 ||
-		url.lastIndexOf("LoginServlet") >-1 ){
+		if (sessao.getAttribute("lojaLogin")!=null || url.lastIndexOf("loginLoja.jsp")>-1 ||
+		url.lastIndexOf("LogarLojaServlet") >-1 ){
 		chain.doFilter(request, response);
 		}else{
-		((HttpServletResponse) response).sendRedirect("login.jsp");
+		((HttpServletResponse) response).sendRedirect("loginLoja.jsp");
 		}
 	}
 

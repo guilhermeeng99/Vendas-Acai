@@ -29,13 +29,13 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="ListarProdutoUsuarioServlet"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand">
-					<li><a href="LoginUsuarioServlet">Sair Usuário</a></li>
+					<li><a href="LogarUsuarioServlet">Sair Usuário</a></li>
 					<li><a href="ListarUsuarioServlet"> <%
  	out.print(usuarioLogin.getNome());
  %>

@@ -1,4 +1,4 @@
-package br.ucsal.loja.controller;
+package br.ucsal.usuario.controller;
 
 import java.io.IOException;
 
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.ucsal.loja.dao.LojaDao;
-import br.ucsal.loja.model.Loja;
+import br.ucsal.usuario.dao.UsuarioDao;
+import br.ucsal.usuario.model.Usuario;
 
-@WebServlet("/AdicionarLojaServlet")
-public class AdicionarLojaServlet extends HttpServlet {
+@WebServlet("/CadastrarUsuarioServlet")
+public class CadastrarUsuarioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AdicionarLojaServlet() {
+	public CadastrarUsuarioServlet() {
 		super();
 
 	}
@@ -24,7 +24,7 @@ public class AdicionarLojaServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Loja loja = new Loja();
+		Usuario usuario = new Usuario();
 
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
@@ -32,19 +32,19 @@ public class AdicionarLojaServlet extends HttpServlet {
 		String senha = request.getParameter("senha");
 		String bairro = request.getParameter("bairro");
 
-		loja.setNome(nome);
-		loja.setEmail(email);
-		loja.setLogin(login);
-		loja.setSenha(senha);
-		loja.setBairro(bairro);
+		usuario.setNome(nome);
+		usuario.setEmail(email);
+		usuario.setLogin(login);
+		usuario.setSenha(senha);
+		usuario.setBairro(bairro);
 
-		LojaDao lojaDao = new LojaDao();
-		lojaDao.adiciona(loja);
-		lojaDao.login(loja);
-		Loja lojaLogin = lojaDao.login(loja);
+		UsuarioDao usuarioDao = new UsuarioDao();
+		usuarioDao.adiciona(usuario);
+		usuarioDao.login(usuario);
+		Usuario usuarioLogin = usuarioDao.login(usuario);
 		HttpSession sessao = request.getSession();
-		sessao.setAttribute("lojaLogin", lojaLogin);
-		response.sendRedirect("/ListarLojaServlet");
+		sessao.setAttribute("usuarioLogin", usuarioLogin);
+		response.sendRedirect("/ListarUsuarioServlet");
 
 	}
 

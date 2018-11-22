@@ -1,4 +1,4 @@
-package br.ucsal.usuario.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.ucsal.usuario.dao.UsuarioDao;
-import br.ucsal.usuario.model.Usuario;
+import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.loja.model.Loja;
 
-@WebServlet("/AdicionarUsuarioServlet")
-public class AdicionarUsuarioServlet extends HttpServlet {
+@WebServlet("/CadastrarLojaServlet")
+public class CadastrarLojaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public AdicionarUsuarioServlet() {
+	public CadastrarLojaServlet() {
 		super();
 
 	}
@@ -24,7 +24,7 @@ public class AdicionarUsuarioServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		Usuario usuario = new Usuario();
+		Loja loja = new Loja();
 
 		String nome = request.getParameter("nome");
 		String email = request.getParameter("email");
@@ -32,19 +32,19 @@ public class AdicionarUsuarioServlet extends HttpServlet {
 		String senha = request.getParameter("senha");
 		String bairro = request.getParameter("bairro");
 
-		usuario.setNome(nome);
-		usuario.setEmail(email);
-		usuario.setLogin(login);
-		usuario.setSenha(senha);
-		usuario.setBairro(bairro);
+		loja.setNome(nome);
+		loja.setEmail(email);
+		loja.setLogin(login);
+		loja.setSenha(senha);
+		loja.setBairro(bairro);
 
-		UsuarioDao usuarioDao = new UsuarioDao();
-		usuarioDao.adiciona(usuario);
-		usuarioDao.login(usuario);
-		Usuario usuarioLogin = usuarioDao.login(usuario);
+		LojaDao lojaDao = new LojaDao();
+		lojaDao.adiciona(loja);
+		lojaDao.login(loja);
+		Loja lojaLogin = lojaDao.login(loja);
 		HttpSession sessao = request.getSession();
-		sessao.setAttribute("usuarioLogin", usuarioLogin);
-		response.sendRedirect("/ListarUsuarioServlet");
+		sessao.setAttribute("lojaLogin", lojaLogin);
+		response.sendRedirect("/ListarLojaServlet");
 
 	}
 

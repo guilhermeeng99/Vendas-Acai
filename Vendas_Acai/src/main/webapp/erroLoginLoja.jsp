@@ -25,7 +25,7 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="ListarProdutoServlet"><img
+				<a class="navbar-brand" href="ListarProdutoLojaServlet"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
@@ -42,7 +42,7 @@
 						<h3>Usuário ou senha incorretos</h3>
 						<br>
 						<h3>
-							<a href="login.jsp">Tentar Novamente</a>
+							<a href="loginLoja.jsp">Tentar Novamente</a>
 						</h3>
 					</div>
 

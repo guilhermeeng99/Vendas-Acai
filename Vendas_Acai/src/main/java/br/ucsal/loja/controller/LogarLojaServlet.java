@@ -1,4 +1,4 @@
-package br.ucsal.usuario.controller;
+package br.ucsal.loja.controller;
 
 import java.io.IOException;
 
@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.ucsal.usuario.dao.UsuarioDao;
-import br.ucsal.usuario.model.Usuario;
+import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.loja.model.Loja;
 
-@WebServlet("/LoginUsuarioServlet")
-public class LoginUsuarioServlet extends HttpServlet {
+@WebServlet("/LogarLojaServlet")
+public class LogarLojaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public LoginUsuarioServlet() {
+	public LogarLojaServlet() {
 		super();
 	}
 
@@ -26,7 +26,7 @@ public class LoginUsuarioServlet extends HttpServlet {
 			sessao.invalidate();
 			
 		}
-		response.sendRedirect("loginUsuario.jsp");
+		response.sendRedirect("loginLoja.jsp");
 	
 }
 	
@@ -35,21 +35,21 @@ public class LoginUsuarioServlet extends HttpServlet {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		
-		Usuario usuario = new Usuario();
-		usuario.setLogin(login);
-		usuario.setSenha(senha);
+		Loja loja = new Loja();
+		loja.setLogin(login);
+		loja.setSenha(senha);
 		
-		UsuarioDao usuarioDao = new UsuarioDao();	 
+		LojaDao lojaDao = new LojaDao();	 
 		
-		Usuario usuarioLogin = usuarioDao.login(usuario);
-		if (usuarioLogin != null) {
+		Loja lojaLogin = lojaDao.login(loja);
+		if (lojaLogin != null) {
 			HttpSession sessao = request.getSession();
-			sessao.setAttribute("usuarioLogin", usuarioLogin);
-			response.sendRedirect("/ListarUsuarioServlet");
+			sessao.setAttribute("lojaLogin", lojaLogin);
+			response.sendRedirect("/ListarLojaServlet");
 
 		} else {
 			request.setAttribute("erro", "Usuario ou Senha invalidos");
-			request.getRequestDispatcher("erroLoginUsuario.jsp").forward(request, response);
+			request.getRequestDispatcher("erroLoginLoja.jsp").forward(request, response);
 			;
 		}
 

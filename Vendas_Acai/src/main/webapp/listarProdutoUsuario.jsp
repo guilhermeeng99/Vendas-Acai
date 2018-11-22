@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%@page import="br.ucsal.usuario.model.Usuario"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
@@ -17,9 +16,6 @@
 </head>
 
 <body>
-	<%
-		Usuario usuarioLogin = (Usuario) session.getAttribute("usuarioLogin");
-	%>
 
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -35,11 +31,8 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand">
-					<li><a href="LoginUsuarioServlet">Sair Loja</a></li>
-					<li><a href="ListarUsuarioServlet"> <%
- 	out.print(usuarioLogin.getNome());
- %>
-					</a></li>
+					<li><a href="ListarUsuarioServlet">Meu Perfil</a></li>
+					<li><a href="LogarUsuarioServlet">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -49,35 +42,37 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-lg-offset-2 centered">
-					<div class="table-responsive">
-						<h2>Alterar Usuário</h2>
-						<br>
-						<form action="AlterarUsuarioServlet" method="POST">
-							<div class="form-group">
-								<label>Nome da Loja</label> <input class="form-control"
-									type="text" name="nome" value="${usuarioLogin.getNome()}" />
-							</div>
-							<div class="form-group">
-								<label>E-mail</label> <input class="form-control" type="text"
-									name="email" value="${usuarioLogin.getEmail()}" />
-							</div>
-							<div class="form-group">
-								<label>Login</label> <input class="form-control" type="text"
-									name="login" value="${usuarioLogin.getLogin()}" />
-							</div>
-							<div class="form-group">
-								<label>Senha</label> <input class="form-control" type="text"
-									name="senha" value="${usuarioLogin.getSenha()}" />
-							</div>
-							<div class="form-group">
-								<label>Bairro</label> <input class="form-control" type="text"
-									name="bairro" value="${usuarioLogin.getBairro()}" />
-							</div>
-							<button type="submit" class="btn btn-dark">Inserir</button>
-						</form>
-					</div>
+					<h2>Tabela de Produtos</h2>
+					<br>
+					<table>
+						<thead>
+							<tr>
+								<th>Id</th>
+								<th>Nome</th>
+								<th>Conteúdo</th>
+								<th>Gramas</th>
+								<th>Preço</th>
+								<th>Alterar</th>
+								<th>Remover</th>
+							</tr>
+						<thead>
+						<tbody>
+							<c:forEach var="p" items="${produto}">
+								<tr>
+									<td>${p.id}</td>
+									<td>${p.nome}</td>
+									<td>${p.conteudo}</td>
+									<td>${p.gramas}</td>
+									<td>${p.preco}</td>
+									<td><a href="AlterarProdutoServlet?id=${p.id}">ALTERAR</a></td>
+									<td><a href="RemoverProdutoServlet?id=${p.id}">REMOVER</a></td>
 
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
 				</div>
+
 			</div>
 		</div>
 	</div>

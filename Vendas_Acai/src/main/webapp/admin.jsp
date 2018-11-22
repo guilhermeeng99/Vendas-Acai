@@ -31,7 +31,7 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand">
-					<li><a href="LoginServlet">Sair</a></li>
+					<li><a href="LogarLojaServlet">Sair</a></li>
 				</ul>
 			</div>
 		</div>
