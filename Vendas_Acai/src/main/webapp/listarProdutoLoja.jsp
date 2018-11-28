@@ -48,6 +48,7 @@
 						<thead>
 							<tr>
 								<th>Id</th>
+								<th>Nome da Loja</th>
 								<th>Nome</th>
 								<th>Conteúdo</th>
 								<th>Gramas</th>
@@ -60,13 +61,13 @@
 							<c:forEach var="p" items="${produto}">
 								<tr>
 									<td>${p.id}</td>
+									<td>${p.loja.nome}</td>
 									<td>${p.nome}</td>
 									<td>${p.conteudo}</td>
 									<td>${p.gramas}</td>
 									<td>${p.preco}</td>
 									<td><a href="AlterarProdutoServlet?id=${p.id}">ALTERAR</a></td>
 									<td><a href="RemoverProdutoServlet?id=${p.id}">REMOVER</a></td>
-
 								</tr>
 							</c:forEach>
 						</tbody>

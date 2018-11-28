@@ -57,7 +57,7 @@ public class AlterarProdutoServlet extends HttpServlet {
 		produtoDao = new ProdutoDao();
 		produtoDao.altera(produto);
 
-		response.sendRedirect("/ListarProdutoServlet");
+		response.sendRedirect("/ListarProdutoLojaServlet");
 	}
 
 }

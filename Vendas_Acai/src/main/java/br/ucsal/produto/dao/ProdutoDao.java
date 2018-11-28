@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.ucsal.loja.model.Loja;
 import br.ucsal.produto.model.Produto;
 import br.ucsal.utilis.ConnectionFactory;
 
@@ -19,13 +20,14 @@ public class ProdutoDao {
 	}
 
 	public void adiciona(Produto produto) {
-		String sql = "insert into produto " + "(nome,conteudo,gramas,preco)" + " values (?,?,?,?)";
+		String sql = "insert into produto " + "(nome,conteudo,gramas,preco,id_loja)" + " values (?,?,?,?,?)";
 		try {
 			PreparedStatement stmt = connection.prepareStatement(sql);
 			stmt.setString(1, produto.getNome());
 			stmt.setString(2, produto.getConteudo());
 			stmt.setString(3, produto.getGramas());
 			stmt.setString(4, produto.getPreco());
+			stmt.setLong(5, produto.getLoja().getId());
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
@@ -65,16 +67,24 @@ public class ProdutoDao {
 
 		try {
 			List<Produto> produtos = new ArrayList<Produto>();
-			String sql = "select * from produto";
+			String sql = "select lojas.nome as loja_nome,lojas.id as loja_id , produto.* from produto INNER JOIN lojas on produto.ID_LOJA = lojas.ID";
 			PreparedStatement stmt = this.connection.prepareStatement(sql);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				Produto produto = new Produto();
+				Loja loja = new Loja();
+				
 				produto.setId(rs.getLong("id"));
 				produto.setNome(rs.getString("nome"));
 				produto.setConteudo(rs.getString("conteudo"));
 				produto.setGramas(rs.getString("gramas"));
 				produto.setPreco(rs.getString("preco"));
+				
+				loja.setId(rs.getLong("loja_id"));
+				loja.setNome(rs.getString("loja_nome"));
+				
+				produto.setLoja(loja);
+				
 				produtos.add(produto);
 			}
 			rs.close();

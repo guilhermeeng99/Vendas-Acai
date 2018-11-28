@@ -1,5 +1,7 @@
 package br.ucsal.produto.model;
 
+import br.ucsal.loja.model.Loja;
+
 public class Produto {
 
 	private long id;
@@ -7,6 +9,7 @@ public class Produto {
 	private String conteudo;
 	private String gramas;
 	private String preco;
+	private Loja loja;
 
 	public Produto() {
 
@@ -60,4 +63,12 @@ public class Produto {
 		this.preco = preco;
 	}
 
+	public Loja getLoja() {
+		return loja;
+	}
+
+	public void setLoja(Loja loja) {
+		this.loja = loja;
+	}	
+	
 }

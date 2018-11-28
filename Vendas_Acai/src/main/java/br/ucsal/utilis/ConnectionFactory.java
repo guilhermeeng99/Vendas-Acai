@@ -19,16 +19,17 @@ public class ConnectionFactory {
 			Class.forName("org.hsqldb.jdbcDriver");
 			connection = DriverManager.getConnection(conStr, usuario, senha);
 			connection.createStatement()
-					.execute("CREATE TABLE IF NOT EXISTS PRODUTO  ( " + "  ID BIGINT IDENTITY PRIMARY KEY,"
-							+ "  NOME VARCHAR(255), CONTEUDO VARCHAR(255), GRAMAS VARCHAR(255), PRECO VARCHAR(255) "
-							+ ");");
-			connection.createStatement()
 					.execute("CREATE TABLE IF NOT EXISTS LOJAS  ( " + "  ID BIGINT IDENTITY PRIMARY KEY,"
 							+ "  NOME VARCHAR(255), EMAIL VARCHAR(255), LOGIN VARCHAR(255), SENHA VARCHAR(255), BAIRRO VARCHAR(255) "
 							+ ");");
 			connection.createStatement()
 			.execute("CREATE TABLE IF NOT EXISTS USUARIO  ( " + "  ID BIGINT IDENTITY PRIMARY KEY,"
 					+ "  NOME VARCHAR(255), EMAIL VARCHAR(255), LOGIN VARCHAR(255), SENHA VARCHAR(255), BAIRRO VARCHAR(255) "
+					+ ");");
+			connection.createStatement()
+			.execute("CREATE TABLE IF NOT EXISTS PRODUTO  ( " + "  ID BIGINT IDENTITY PRIMARY KEY,"
+					+ "  NOME VARCHAR(255), CONTEUDO VARCHAR(255), GRAMAS VARCHAR(255), PRECO VARCHAR(255), ID_LOJA INT NOT NULL,"
+					+ "  FOREIGN KEY (ID_LOJA) REFERENCES LOJAS(ID)"
 					+ ");");
 		} catch (SQLException | ClassNotFoundException e) {
 			throw new RuntimeException(e);

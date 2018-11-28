@@ -35,11 +35,11 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right pt navbar-brand">
-					<li><a href="LogarUsuarioServlet">Sair Usuário</a></li>
 					<li><a href="ListarUsuarioServlet"> <%
  	out.print(usuarioLogin.getNome());
  %>
 					</a></li>
+					<li><a href="LogarUsuarioServlet">Sair Usuário</a></li>
 				</ul>
 			</div>
 		</div>
