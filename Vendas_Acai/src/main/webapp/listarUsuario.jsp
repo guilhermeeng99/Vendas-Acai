@@ -123,7 +123,6 @@
 				</div>
 				<div class="col-lg-6 ">
 					<h4>
-					<a href="ListarUsuariosServlet">Administrador</a>
 						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
 							target="_blank">Repositório</a>
 					</h4>

@@ -29,53 +29,27 @@
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
 			</div>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav navbar-right pt navbar-brand">
-					<li><a href="ListarUsuarioServlet">Meu Perfil</a></li>
-					<li><a href="LogarUsuarioServlet">Logout</a></li>
-				</ul>
-			</div>
+
 		</div>
 	</div>
 
 	<div id="ww">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 centered">
-					<h2>Tabela de Produtos</h2>
-					<br>
-					<table>
-						<thead>
-							<tr>
-								<th>Id</th>
-								<th>Nome da Loja</th>
-								<th>Nome</th>
-								<th>Conteúdo</th>
-								<th>Gramas</th>
-								<th>Preço</th>	
-								<th>Comprar</th>	
-							</tr>
-						<thead>
-						<tbody>
-							<c:forEach var="p" items="${produto}">
-								<tr>
-									<td>${p.id}</td>
-									<td>${p.loja.nome}</td>
-									<td>${p.nome}</td>
-									<td>${p.conteudo}</td>
-									<td>${p.gramas}</td>
-									<td>${p.preco}</td>
-									<td><a href="compraProduto.jsp">COMPRAR</a></td>
-
-								</tr>
-							</c:forEach>
-						</tbody>
-					</table>
+				<div class="col-lg-4 col-lg-offset-4 centered">
+					<div class="table-responsive">
+						<h2>Compra efetuada com sucesso!</h2>
+						<h3>Bom apetite!</h3>
+						<br>
+						<h3>
+							<a href="ListarProdutoUsuarioServlet">Comprar Novamente</a>
+						</h3>
+					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
+
 
 	<div id="footer">
 		<div class="container">

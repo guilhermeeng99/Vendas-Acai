@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.produto.dao.ProdutoDao;
 
 @WebServlet("/RemoverLojaServlet")
 public class RemoverLojaServlet extends HttpServlet {
@@ -21,6 +22,11 @@ public class RemoverLojaServlet extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String id = req.getParameter("id");
+
+		ProdutoDao produtoDao = new ProdutoDao();
+
+		produtoDao.remove(Long.parseLong(id));
 		LojaDao lojaDao = new LojaDao();
 		lojaDao.remove(Long.parseLong(req.getParameter("id")));
 

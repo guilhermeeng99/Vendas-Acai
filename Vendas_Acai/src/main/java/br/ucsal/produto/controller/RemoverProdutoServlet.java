@@ -28,7 +28,7 @@ public class RemoverProdutoServlet extends HttpServlet {
 
 		produtoDao.remove(Long.parseLong(id));
 
-		RequestDispatcher rd = req.getRequestDispatcher("/ListarProdutoServlet");
+		RequestDispatcher rd = req.getRequestDispatcher("/ListarProdutoLojaServlet");
 		rd.forward(req, resp);
 	}
 }
