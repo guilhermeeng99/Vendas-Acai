@@ -1,84 +1,36 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 body {
-  	background-color: #ffffff;
-  	font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    color: #555;
-
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-}
-
-img{
-	max-width:100%;
-	height:auto;	
-}
-
-/* Titles */
-h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    color: #333;
+	font-weight: 400;
+	font-size: 14px;
 }
 
-h1 {
-	font-size: 35px;
-	margin-top: 30px;
-	margin-bottom: 30px;
+img {
+	max-width: 100%;
+	height: auto;
 }
 
-
-
-/* Paragraph & Typographic */
 p {
-    line-height: 28px;
-    margin-bottom: 25px;
-    font-size: 16px;
+	line-height: 28px;
+	margin-bottom: 25px;
+	font-size: 16px;
 }
 
 .centered {
-    text-align: center;
+	text-align: center;
 }
 
-/* Links */
 a {
-    color: #854d58;
-    word-wrap: break-word;
-
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+	color: #854d58;
+	word-wrap: break-word;
 }
 
-a:hover,
-a:focus {
-    color: #7b7b7b;
-    text-decoration: none;
-    outline: 0;
+a:hover, a:focus {
+	color: #7b7b7b;
+	text-decoration: none;
+	outline: 0;
 }
-
-a:before,
-a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
- hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
-
 
 .navbar {
 	text-transform: uppercase;
@@ -86,8 +38,8 @@ a:after {
 }
 
 .navbar-inverse {
-	padding-bottom: 30px;
-	padding-top: 25px;
+	padding-bottom: 20px;
+	padding-top: 20px;
 }
 
 .navbar-inverse {
@@ -95,23 +47,17 @@ a:after {
 	border-color: #854d7d;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav>li>a {
 	color: white;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-nav>li>a:hover {
 	color: #222222;
 }
 
 .navbar-brand {
 	font-weight: 700;
 	font-size: 20px;
-	letter-spacing: 2px;
-}
-
-.navbar-brand-mt {
-	font-weight: 500;
-	font-size: 15px;
 	letter-spacing: 2px;
 }
 
@@ -123,36 +69,30 @@ a:after {
 	border-color: transparent;
 }
 
-.progress-bar-theme {
-  background-color: #400040;
-}
-
-
-/* Helpers */
-
+/* +++++ Auxiliares +++++ */
 .mt {
 	padding-top: 10px;
 	padding-bottom: 5px;
+	font-weight: bold;
+	font-size: 20px;
 }
 
 .pt {
 	padding-top: 20px;
 	padding-bottom: 20px;
+	font-weight: bold;
+	font-size: 20px;
 }
 
-
-/* +++++ WRAP SECTIONS +++++ */
-
 #ww {
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 	background-color: #f2f2f2;
 }
 
-
 #footer {
 	background-color: #2f2f2f;
-	padding-top: 40px;
+	padding-top: 20px;
 	padding-bottom: 20px; 
 }
 
@@ -166,115 +106,57 @@ a:after {
 	padding-bottom: 20px;
 }
 
-
-/* +++++ Color Wraps / Blog Page +++++ */
-
-#grey {
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background-color: #f2f2f2;
-}
-
-#white {
-	padding-top: 60px;
-	padding-bottom: 60px;
-	background-color: #ffffff;
-}
-
-/* glyphicon Configuration */
-
-.glyphicon {
-	font-size: 40px;
-	color: #1abc9c;
-}
 table {
-  border-spacing: 1;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 6px;
-  overflow: hidden;
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
+	border-spacing: 1;
+	border-collapse: collapse;
+	background: white;
+	border-radius: 6px;
+	overflow: hidden;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
 }
+
 table * {
-  position: relative;
+	position: relative;
 }
+
 table td, table th {
-  padding-left: 8px;
+	padding-left: 8px;
 }
+
 table thead tr {
-  height: 60px;
-  background: #854d58;
-  font-size: 16px;
+	height: 60px;
+	background: #854d58;
+	font-size: 16px;
 }
+
 table tbody tr {
-  height: 48px;
-  border-bottom: 1px solid #E3F1D5;
+	height: 48px;
+	border-bottom: 1px solid #E3F1D5;
 }
+
 table tbody tr:last-child {
-  border: 0;
+	border: 0;
 }
+
 table td, table th {
-  text-align: left;
+	text-align: left;
 }
+
 table th {
 	color: #f2f2f2;
+}
 
-	}
 table td.l, table th.l {
-  text-align: right;
+	text-align: right;
 }
+
 table td.c, table th.c {
-  text-align: center;
+	text-align: center;
 }
+
 table td.r, table th.r {
-  text-align: center;
-}
-
-@media screen and (max-width: 35.5em) {
-  table {
-    display: block;
-  }
-  table > *, table tr, table td, table th {
-    display: block;
-  }
-  table thead {
-    display: none;
-  }
-  table tbody tr {
-    height: auto;
-    padding: 8px 0;
-  }
-  table tbody tr td {
-    padding-left: 45%;
-    margin-bottom: 12px;
-  }
-  table tbody tr td:last-child {
-    margin-bottom: 0;
-  }
-  table tbody tr td:before {
-    position: absolute;
-    font-weight: 700;
-    width: 40%;
-    left: 10px;
-    top: 0;
-  }
-  table tbody tr td:nth-child(1):before {
-    content: "Code";
-  }
-  table tbody tr td:nth-child(2):before {
-    content: "Stock";
-  }
-  table tbody tr td:nth-child(3):before {
-    content: "Cap";
-  }
-  table tbody tr td:nth-child(4):before {
-    content: "Inch";
-  }
-
-blockquote {
-  color: white;
-  text-align: center;
+	text-align: center;
 }
