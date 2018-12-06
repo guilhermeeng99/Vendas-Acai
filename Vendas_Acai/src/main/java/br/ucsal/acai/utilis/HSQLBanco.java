@@ -1,4 +1,4 @@
-package br.ucsal.utilis;
+package br.ucsal.acai.utilis;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

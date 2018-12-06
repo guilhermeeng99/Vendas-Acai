@@ -1,4 +1,4 @@
-package br.ucsal.utilis;
+package br.ucsal.acai.utilis;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

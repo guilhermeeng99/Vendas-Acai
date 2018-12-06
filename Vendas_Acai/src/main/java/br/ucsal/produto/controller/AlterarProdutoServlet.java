@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.produto.dao.ProdutoDao;
-import br.ucsal.produto.model.Produto;
+import br.ucsal.acai.dao.ProdutoDao;
+import br.ucsal.acai.model.Produto;
 
 @WebServlet("/AlterarProdutoServlet")
 public class AlterarProdutoServlet extends HttpServlet {

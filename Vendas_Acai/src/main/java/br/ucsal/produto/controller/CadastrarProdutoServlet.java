@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.ucsal.loja.model.Loja;
-import br.ucsal.produto.dao.ProdutoDao;
-import br.ucsal.produto.model.Produto;
+import br.ucsal.acai.dao.ProdutoDao;
+import br.ucsal.acai.model.Loja;
+import br.ucsal.acai.model.Produto;
 
 @WebServlet("/CadastrarProdutoServlet")
 public class CadastrarProdutoServlet extends HttpServlet {

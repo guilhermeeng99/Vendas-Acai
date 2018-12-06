@@ -1,20 +1,9 @@
 <!DOCTYPE html>
-<%@page import="br.ucsal.loja.model.Loja"%>
+<%@page import="br.ucsal.acai.model.Loja"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="assetss/img/acai_icon.png">
 
-<title>Açaí Point</title>
-
-<link href="assetss/css/bootstrap.css" rel="stylesheet">
-
-<link href="assetss/css/main.css" rel="stylesheet">
-
-</head>
+<c:import url="cabecalho.jsp"></c:import>
 
 <body>
 	<%
@@ -82,33 +71,7 @@
 		</div>
 	</div>
 
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-
-				<div class="col-lg-5">
-					<h4>SOBRE O PROJETO:</h4>
-					<p>Um site de vendas de açaí interativo com os usuários, de
-						forma que os mesmos não precisem mais ir até o local de vendas ou
-						pegar filas para comprar o açaí, já que os usuários receberão em
-						casa.</p>
-
-
-				</div>
-				<div class="col-lg-6 ">
-					<h4>
-						<a href="https://github.com/guilhermeeng99/Vendas_Acai"
-							target="_blank">Repositório</a>
-					</h4>
-					<p>Atividade realizada atráves de conhecimentos adquiridos
-						pelas matérias: WEB, Eng. Requisitos, Banco de Dados I</p>
-
-				</div>
-
-			</div>
-
-		</div>
-	</div>
+	<c:import url="rodape.jsp"></c:import>
 
 </body>
 </html>

@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.loja.dao.LojaDao;
-import br.ucsal.produto.dao.ProdutoDao;
+import br.ucsal.acai.dao.LojaDao;
+import br.ucsal.acai.dao.ProdutoDao;
 
 @WebServlet("/RemoverLojaServlet")
 public class RemoverLojaServlet extends HttpServlet {

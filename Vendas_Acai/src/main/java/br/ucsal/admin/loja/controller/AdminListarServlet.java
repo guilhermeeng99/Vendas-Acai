@@ -1,4 +1,4 @@
-package br.ucsal.loja.admin.controller;
+package br.ucsal.admin.loja.controller;
 
 import java.io.IOException;
 
@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.loja.dao.LojaDao;
-import br.ucsal.usuario.dao.UsuarioDao;
+import br.ucsal.acai.dao.LojaDao;
+import br.ucsal.acai.dao.UsuarioDao;
 
 @WebServlet("/AdminListarServlet")
 public class AdminListarServlet extends HttpServlet {

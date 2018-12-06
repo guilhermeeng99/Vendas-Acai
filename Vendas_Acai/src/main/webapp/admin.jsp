@@ -1,30 +1,14 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon" href="assetss/img/acai_icon.png">
 
-<title>Açaí Point</title>
-
-<link href="assetss/css/bootstrap.css" rel="stylesheet">
-
-<link href="assetss/css/main.css" rel="stylesheet">
-
-</head>
+<c:import url="cabecalho.jsp"></c:import>
 
 <body>
 
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-					data-target=".navbar-collapse">
-					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-						class="icon-bar"></span>
-				</button>
 				<a class="navbar-brand" href="ListarProdutoServlet"><img
 					src="assetss/img/acai_icon.png" alt="Icone Açaí" height="55"
 					width="55"> Açaí Point</a>
@@ -71,7 +55,7 @@
 						</tbody>
 					</table>
 				</div>
-	<div class="col-lg-8 col-lg-offset-2 centered">
+				<div class="col-lg-8 col-lg-offset-2 centered">
 					<h2>Tabela de Todos os Usuários</h2>
 					<br>
 					<table>
@@ -133,6 +117,8 @@
 
 		</div>
 	</div>
+
+	<c:import url="rodape.jsp"></c:import>
 
 </body>
 </html>

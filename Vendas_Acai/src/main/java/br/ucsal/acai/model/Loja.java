@@ -1,6 +1,6 @@
-package br.ucsal.usuario.model;
+package br.ucsal.acai.model;
 
-public class Usuario {
+public class Loja {
 
 	private long id;
 	private String nome;
@@ -9,11 +9,11 @@ public class Usuario {
 	private String senha;
 	private String bairro;
 
-	public Usuario() {
+	public Loja() {
 
 	}
 
-	public Usuario(long id, String nome, String email, String login, String senha, String bairro) {
+	public Loja(long id, String nome, String email, String login, String senha, String bairro) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;

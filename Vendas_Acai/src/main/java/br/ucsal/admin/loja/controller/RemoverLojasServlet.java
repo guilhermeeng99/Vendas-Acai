@@ -1,4 +1,4 @@
-package br.ucsal.loja.admin.controller;
+package br.ucsal.admin.loja.controller;
 
 import java.io.IOException;
 
@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.usuario.dao.UsuarioDao;
+import br.ucsal.acai.dao.LojaDao;
 
-@WebServlet("/RemoverUsuariosServlet")
-public class RemoverUsuariosServlet extends HttpServlet {
+@WebServlet("/RemoverLojasServlet")
+public class RemoverLojasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public RemoverUsuariosServlet() {
+	public RemoverLojasServlet() {
 		super();
 
 	}
@@ -24,9 +24,9 @@ public class RemoverUsuariosServlet extends HttpServlet {
 
 		String id = req.getParameter("id");
 
-		UsuarioDao usuarioDao = new UsuarioDao();
+		LojaDao lojaDao = new LojaDao();
 
-		usuarioDao.remove(Long.parseLong(id));
+		lojaDao.remove(Long.parseLong(id));
 
 		RequestDispatcher rd = req.getRequestDispatcher("/AdminListarServlet");
 		rd.forward(req, resp);

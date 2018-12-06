@@ -1,6 +1,4 @@
-package br.ucsal.produto.model;
-
-import br.ucsal.loja.model.Loja;
+package br.ucsal.acai.model;
 
 public class Produto {
 

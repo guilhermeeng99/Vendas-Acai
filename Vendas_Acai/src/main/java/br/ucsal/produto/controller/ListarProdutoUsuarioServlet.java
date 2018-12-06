@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.produto.dao.ProdutoDao;
+import br.ucsal.acai.dao.ProdutoDao;
 
 @WebServlet("/ListarProdutoUsuarioServlet")
 public class ListarProdutoUsuarioServlet extends HttpServlet {

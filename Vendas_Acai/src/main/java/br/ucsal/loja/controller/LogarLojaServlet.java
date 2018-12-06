@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.ucsal.loja.dao.LojaDao;
-import br.ucsal.loja.model.Loja;
+import br.ucsal.acai.dao.LojaDao;
+import br.ucsal.acai.model.Loja;
 
 @WebServlet("/LogarLojaServlet")
 public class LogarLojaServlet extends HttpServlet {

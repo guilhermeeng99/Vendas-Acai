@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.ucsal.loja.dao.LojaDao;
+import br.ucsal.acai.dao.LojaDao;
 
 @WebServlet("/ListarLojaServlet")
 public class ListarLojaServlet extends HttpServlet {

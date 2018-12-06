@@ -1,4 +1,4 @@
-package br.ucsal.usuario.dao;
+package br.ucsal.acai.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ucsal.usuario.model.Usuario;
-import br.ucsal.utilis.ConnectionFactory;
+import br.ucsal.acai.model.Usuario;
+import br.ucsal.acai.utilis.ConnectionFactory;
 
 public class UsuarioDao {
 
